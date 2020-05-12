@@ -1,5 +1,6 @@
 #LoginSection{
     opacity: 0.8;
+    background-color: #e1b382;
 }
 #LoginSection:hover {
     opacity: 0.9;

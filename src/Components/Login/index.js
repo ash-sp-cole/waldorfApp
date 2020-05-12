@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { Component, Fragment } from 'react'
-import { Button, Card, Divider, Image, Placeholder } from 'semantic-ui-react'
+import { Popup, Button, Card, Divider, Header, Icon, Image, Placeholder } from 'semantic-ui-react'
 
 const cards = [
   {
@@ -38,16 +38,18 @@ export default class PlaceholderExampleCard extends Component {
     const { loading } = this.state
 
     return (
-      <Fragment style={{width:'60vw', opacity:'0.9'}} id="cardMainDisplay">
+      <Fragment style={{width:'60vw', opacity:'0.9' ,backgroundColor:'#e1b382'}} id="cardMainDisplay">
         {/* <Button loading={loading} onClick={this.handleLoadingClick} primary>
           refresh
         </Button> */}
-       
-        <Card.Group doubling itemsPerRow={3} stackable style={{width:'40vw', textAlign:'center', margin:'auto'}}>
+        
+   
+        <Card.Group doubling itemsPerRow={3} stackable style={{width:'40vw', textAlign:'center', background:'#e1b382' ,borderRadius: '25px', margin:'auto', marginBottom:'10px'}}>
           {_.map(cards, (card) => (
             <Card key={card.header}>
               {loading ? (
                 <Placeholder>
+                  
                   <Placeholder.Image square />
                 </Placeholder>
               ) : (
@@ -66,6 +68,7 @@ export default class PlaceholderExampleCard extends Component {
                     </Placeholder.Paragraph>
                   </Placeholder>
                 ) : (
+                  
                   <Fragment>
                     <Card.Header>{card.header}</Card.Header>
                     <Card.Meta>{card.date}</Card.Meta>
@@ -84,6 +87,7 @@ export default class PlaceholderExampleCard extends Component {
           ))}
         </Card.Group>
       </Fragment>
+      
     )
   }
 }

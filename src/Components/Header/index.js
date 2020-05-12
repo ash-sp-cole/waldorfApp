@@ -9,7 +9,7 @@ export default class Header extends Component {
       const { activeItem } = this.state
   
       return (
-        <Segment >
+        <Segment style={{backgroundColor:'#e1b382'}}>
           <Menu fluid widths={3} size="huge"pointing>
             <Menu.Item 
               name='home'

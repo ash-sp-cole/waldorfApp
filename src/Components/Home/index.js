@@ -6,13 +6,17 @@ const Home  = () =>{
 return (
     <div>
         
-       <Segment placeholder style={{width:'80vw', margin:'auto'}} id="LoginSection">
-           
+       <Segment placeholder style={{width:'80vw', margin:'auto',borderRadius: '25px'}} id="LoginSection">
+       <Header as='h1' icon textAlign='center' style={{color:'#12343b'}}>
+    
+    <Header.Content>Waldorf-Online</Header.Content>
+  </Header>
     <Grid columns={2} relaxed='very' stackable>
+        
       <Grid.Column>
-      <Header as='h1' icon textAlign='center' >
+      <Header as='h1' icon textAlign='center' style={{color:'#2d545e'}} >
                    
-                        <Icon name='users' circular />
+                        <Icon name='users' circular  style={{color:'#2d545e'}}/>
                    
                     <Header.Content></Header.Content>
                 </Header>
@@ -38,14 +42,14 @@ return (
         <Button content='Sign up' icon='user plus' size='big' />
         <Header as='h1' icon textAlign='center' >
                    
-                   <Icon name='user plus' circular />
+                   <Icon name='user plus' circular  style={{color:'#2d545e'}}/>
               
                <Header.Content></Header.Content>
            </Header>
       </Grid.Column>
     </Grid>
 
-    <Divider vertical>Or</Divider>
+    <Divider style={{color:'#2d545e', height:'5vh'}} vertical>Or</Divider>
   </Segment>
     </div>
 )
