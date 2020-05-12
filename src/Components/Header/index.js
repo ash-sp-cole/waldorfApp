@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Menu } from "semantic-ui-react";
+import { Segment,Icon, Menu } from "semantic-ui-react";
 export default class Header extends Component {
     state = { activeItem: 'home' }
   
@@ -9,25 +9,34 @@ export default class Header extends Component {
       const { activeItem } = this.state
   
       return (
-        <Segment style={{backgroundColor:'#e1b382'}}>
-          <Menu fluid widths={3} size="huge"pointing>
-            <Menu.Item 
-              name='home'
-              active={activeItem === 'home'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name='messages'
-              active={activeItem === 'messages'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name='friends'
-              active={activeItem === 'friends'}
-              onClick={this.handleItemClick}
-            />
-          </Menu>
-        </Segment>
+        <Menu icon='labeled' fluid widths={3} style={{backgroundColor:'#e1b382'}}>
+        <Menu.Item
+          name='gamepad'
+          active={activeItem === 'gamepad'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='users' />
+         
+        </Menu.Item>
+
+        <Menu.Item
+          name='video camera'
+          active={activeItem === 'video camera'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='home' />
+         
+        </Menu.Item>
+
+        <Menu.Item
+          name='video play'
+          active={activeItem === 'video play'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name='comments' />
+       
+        </Menu.Item>
+      </Menu>
       )
     }
   }
