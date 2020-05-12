@@ -1,12 +1,20 @@
 import React from 'react';
-import {Segment, Divider, Grid, Form, Button} from 'semantic-ui-react';
+import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button} from 'semantic-ui-react';
 const Home  = () =>{
 
 return (
     <div>
+        
        <Segment placeholder>
+           
     <Grid columns={2} relaxed='very' stackable>
       <Grid.Column>
+      <Header as='h1' icon textAlign='center' >
+                   
+                        <Icon name='users' circular />
+                   
+                    <Header.Content></Header.Content>
+                </Header>
         <Form>
           <Form.Input
             icon='user'
@@ -26,7 +34,13 @@ return (
       </Grid.Column>
 
       <Grid.Column verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
+        <Button content='Sign up' icon='user plus' size='big' />
+        <Header as='h1' icon textAlign='center' >
+                   
+                   <Icon name='users' circular />
+              
+               <Header.Content></Header.Content>
+           </Header>
       </Grid.Column>
     </Grid>
 
