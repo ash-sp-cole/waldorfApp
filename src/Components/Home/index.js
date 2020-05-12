@@ -1,11 +1,12 @@
 import React from 'react';
 import './login.css';
-import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button} from 'semantic-ui-react';
+import PlaceholderExampleCard from '../Login';
+import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button, Placeholder} from 'semantic-ui-react';
 const Home  = () =>{
 
 return (
     <div>
-        
+       <PlaceholderExampleCard/>
        <Segment placeholder style={{width:'80vw', margin:'auto',borderRadius: '25px'}} id="LoginSection">
        <Header as='h1' icon textAlign='center' style={{color:'#12343b'}}>
     
