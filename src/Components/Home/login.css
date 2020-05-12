@@ -1,0 +1,6 @@
+#LoginSection{
+    opacity: 0.8;
+}
+#LoginSection:hover {
+    opacity: 0.9;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
+import './login.css';
 import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button} from 'semantic-ui-react';
 const Home  = () =>{
 
 return (
     <div>
         
-       <Segment placeholder>
+       <Segment placeholder style={{width:'80vw', margin:'auto'}} id="LoginSection">
            
     <Grid columns={2} relaxed='very' stackable>
       <Grid.Column>
@@ -37,7 +38,7 @@ return (
         <Button content='Sign up' icon='user plus' size='big' />
         <Header as='h1' icon textAlign='center' >
                    
-                   <Icon name='users' circular />
+                   <Icon name='user plus' circular />
               
                <Header.Content></Header.Content>
            </Header>

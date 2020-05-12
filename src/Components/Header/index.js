@@ -11,7 +11,7 @@ export default class Header extends Component {
       return (
         <Segment >
           <Menu fluid widths={3} size="huge"pointing>
-            <Menu.Item
+            <Menu.Item 
               name='home'
               active={activeItem === 'home'}
               onClick={this.handleItemClick}

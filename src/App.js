@@ -9,8 +9,9 @@ function App() {
   return (
   <div>
 <Header/>
+<PlaceholderExampleCard />
 <Home/>
- <PlaceholderExampleCard/>
+
   </div>
   );
 }
