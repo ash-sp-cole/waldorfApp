@@ -38,7 +38,7 @@ export default class PlaceholderExampleCard extends Component {
     const { loading } = this.state
 
     return (
-      <Fragment style={{margin:'auto', opacity:'0.9' ,backgroundColor:'#12343b'}} id="cardMainDisplay">
+      < div style={{margin:'auto', opacity:'0.9' ,backgroundColor:'#12343b'}} id="cardMainDisplay">
         {/* <Button loading={loading} onClick={this.handleLoadingClick} primary>
           refresh
         </Button> */}
@@ -175,7 +175,7 @@ export default class PlaceholderExampleCard extends Component {
 
 </Grid.Column>
 </Grid>
-      </Fragment>
+      </ div>
       
     )
   }

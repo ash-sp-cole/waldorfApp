@@ -9,7 +9,7 @@ export const setAuthSignIn = (id) => {
     }
 
 }
-    export const setAUthSignOut = () =>{
+    export const setAuthSignOut = () =>{
 
         console.log("sign out action")
         return {

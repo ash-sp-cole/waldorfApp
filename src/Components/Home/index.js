@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './login.css';
 import PlaceholderExampleCard from '../Login';
 import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button, Placeholder} from 'semantic-ui-react';
-const Home  = () =>{
+import {connect} from 'react-redux';
+import {setAuthSignIn, setAuthSignOut} from '../../Actions/index';
+class Home extends Component {
 
+  state = {
+    tempName: null,
+    tempPass: null,
+  }
+  userSignIn = (event) =>
+ {
+   this.setState({
+     tempName: event.target.tempName.value,
+     tempPass: event.target.tempPass.value
+   })
+ 
+   this.props.setAuthSignIn(event.target.tempName.value);
+  console.log('clicked set sign in', "user name is =>   " ,event.target.tempName.value, " password 'shhhhh :) ' is == > ", event.target.tempPass.value)
+
+ }
+
+componentDidUpdate ()
+{
+  if(this.props.isSignedIn === true) {
+    console.log("component updated and user is now SIGNED IN  user name is ---> ", this.props.userName)
+  }
+}
+render() {
+  console.log(this.props.isSignedIn);
 return (
     <div>
        <PlaceholderExampleCard/>
@@ -11,6 +37,7 @@ return (
        <Header as='h1' icon textAlign='center' style={{color:'#12343b'}}>
     
     <Header.Content>Waldorf-Online</Header.Content>
+    <h1> welcome {this.props.userName}</h1>
   </Header>
     <Grid columns={2} relaxed='very' stackable>
         
@@ -21,14 +48,16 @@ return (
                    
                     <Header.Content></Header.Content>
                 </Header>
-        <Form>
+        <Form onSubmit={this.userSignIn}>
           <Form.Input
+            name='tempName'
             icon='user'
             iconPosition='left'
-            label='Username'
+            label='name'
             placeholder='Username'
           />
           <Form.Input
+          name="tempPass"
             icon='lock'
             iconPosition='left'
             label='Password'
@@ -55,7 +84,17 @@ return (
     </div>
 )
 
-
+}
 }
 
-export default Home;
+const mapStatetoProps =  (state) =>{
+  return {
+    isSignedIn: state.auth.signedIn,
+    userName : state.auth.userId
+  }
+}
+
+
+
+
+export default connect  (mapStatetoProps, {setAuthSignIn, setAuthSignOut}) (Home);
