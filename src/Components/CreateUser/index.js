@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Button,Modal,Image,Header,Form, Message} from 'semantic-ui-react';
-
+import {Button,Modal,Image,Header,Form} from 'semantic-ui-react';
+import {CreateNewUser} from '../api';
+import { createStore } from 'redux';
 
 const options = [
     { key: 'm', text: 'Male', value: 'male' },
@@ -11,18 +12,52 @@ const options = [
 class UserCreateForm extends Component {
 state ={
     open:false,
+    nameFirst:'',
+    nameLast: '',
+    email:'',
+    gender:'',
+    about:'',
+    looking:'',
+   
+   
+
    
 }
 
     show = (dimmer) => () => this.setState({ dimmer, open: true })
     close = () => this.setState({ open: false })
-    handleChange = (e, { value }) => this.setState({ value })
+  
+    setGenderState = (e, { value }) => {
+        this.setState({ gender:value })
+        console.log(this.state.gender)
+    } 
+   
+    handleFormSubmit = (event)=>{
+        console.log(event.target.gender)
+         this.setState({
+             nameFirst:event.target.first.value,
+             nameLast:event.target.last.value,
+             email:event.target.email.value,
+             about:event.target.about.value,
+           
+         })
+        
+         console.log(JSON.stringify(this.state))
 
+         CreateNewUser(this.state.nameFirst,
+            this.state.nameLast,
+            this.state.about,
+            this.state.gender,
+            this.state.email)
+        // this.close()
+    }
 
 render(){
 
+
+
     const { open, dimmer } = this.state
-    const { value } = this.state
+    
 
     return (
         <div>
@@ -44,46 +79,36 @@ render(){
 
 
 
-              <Form size='large' success>
+              <Form size='large' success onSubmit={this.handleFormSubmit}>
         <Form.Group style={{width:'60vw'}}>
-          <Form.Input fluid label='First name' placeholder='First name' style={{width:'10vw'}} />
-          <Form.Input fluid label='Last name' placeholder='Last name' style={{width:'10vw'}} />
+          <Form.Input fluid label='First name' name="first" placeholder='First name' style={{width:'10vw'}} />
+          <Form.Input fluid label='Last name' name="last" placeholder='Last name' style={{width:'10vw'}} />
+         
           <Form.Select
             fluid
             label='Gender'
+            name='gender'
             options={options}
             placeholder='Gender'
+            onChange={this.setGenderState}
           />
+          
+        
         </Form.Group>
-        <Form.Group inline>
-          <label>Looking for </label>
-          <Form.Radio
-            label='Friends'
-            value='sm'
-            checked={value === 'sm'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Work'
-            value='md'
-            checked={value === 'md'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Maybe more'
-            value='lg'
-            checked={value === 'lg'}
-            onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
+        
+      
+       
+        <Form.TextArea label='About' name="about" placeholder='Tell us more about you...' />
         <Form.Checkbox label='I agree to the Terms and Conditions' />
-        {/* <Message
-      success
-      header='Form Completed'
-      content="You're all signed up for the newsletter"
-    /> */}
-        <Form.Button>Submit</Form.Button>
+    
+       <Form.Input fluid label='Email' name='email' placeholder='please enter valid email' style={{width:'16vw'}} />
+       <Button
+              positive
+              icon='checkmark'
+              labelPosition='right'
+              content="Sign me up"
+              
+            />
       </Form>
 
 
@@ -95,13 +120,7 @@ render(){
             <Button color='black' onClick={this.close}>
               Nope
             </Button>
-            <Button
-              positive
-              icon='checkmark'
-              labelPosition='right'
-              content="Sign me up"
-              onClick={this.close}
-            />
+           
           </Modal.Actions>
         </Modal>
 

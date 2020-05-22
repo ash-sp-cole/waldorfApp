@@ -18,11 +18,13 @@ import axios from 'axios';
 export const CreateNewUser = (firstName,lastName,About,Gender,Email) => {
 
         console.log(firstName,lastName,About,Gender,Email) 
-    axios.post('http://localhost/3000/1',{
+    axios.post('http://localhost:3000/users/12',{
         name: firstName,
         age: lastName,
         gender: Gender,
         email: Email
     })
-   
+    .then(function(response){
+        console.log(response)
+    })
 }
