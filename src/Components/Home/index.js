@@ -5,6 +5,7 @@ import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button, Placeholder}
 import {connect} from 'react-redux';
 import LogedInPage from'../LoginScreens'
 import {setAuthSignIn, setAuthSignOut} from '../../Actions/index';
+import UserCreateForm from '../CreateUser';
 class Home extends Component {
 
   state = {
@@ -77,7 +78,7 @@ render() {
    </Grid.Column>
 
    <Grid.Column verticalAlign='middle'>
-     <Button content='Sign up' icon='user plus' size='big' />
+     <UserCreateForm/>
      <Header as='h1' icon textAlign='center' >
                 
                 <Icon name='user plus' circular  style={{color:'#2d545e'}}/>
