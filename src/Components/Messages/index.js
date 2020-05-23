@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Placeholder, Button} from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
 import axios from 'axios';
 import { ImageList } from './displayUsers';
 

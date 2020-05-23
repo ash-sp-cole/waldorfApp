@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Segment, Header, Grid, Icon, Card, Image,} from 'semantic-ui-react';
+import {Segment, Header, Grid, Icon, Card, Image,} from 'semantic-ui-react';
 import { connect} from 'react-redux';
 import {setAuthSignOut} from '../../Actions/index';
-import PlaceholderExampleCard from '../Login';
+
 
 class LogedInPage  extends Component{
     render() {
@@ -43,7 +43,7 @@ return (
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
+      <a href='/'>
         <Icon name='user' />
         22 Friends
       </a>

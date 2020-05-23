@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Image, Popup, Icon, Row, Button,Rating } from 'semantic-ui-react';
+import { Card, Image, Popup, Icon,Button,Rating } from 'semantic-ui-react';
 import '../Messages/messageList.css';
 export const ImageList = (props) => {
     console.log(props)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button,Modal,Image,Header,Form} from 'semantic-ui-react';
 import {CreateNewUser} from '../api';
-import { createStore } from 'redux';
+
 
 const options = [
     { key: 'm', text: 'Male', value: 'male' },

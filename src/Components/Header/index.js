@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment,Icon, Menu } from "semantic-ui-react";
+import {Icon, Menu } from "semantic-ui-react";
 import {Link} from 'react-router-dom';
 export default class Header extends Component {
     state = { activeItem: 'home' }

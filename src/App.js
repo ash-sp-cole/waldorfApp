@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Home from './Components/Home';
 import Messages from './Components/Messages';
 import Friends from './Components/Friends';
-import PlaceholderExampleCard from "./Components/Login";
+
 import './App.css';
 import { BrowserRouter, Route} from 'react-router-dom';
 

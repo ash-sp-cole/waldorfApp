@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { Component, Fragment } from 'react'
-import { Feed, Grid, Button, Card, Divider, Header, Icon, Image, Placeholder } from 'semantic-ui-react'
+import { Feed, Grid, Button, Card, Icon, Image, Placeholder } from 'semantic-ui-react'
 
 const cards = [
   {
@@ -93,7 +93,7 @@ export default class PlaceholderExampleCard extends Component {
         <Feed style={{backgroundColor:'white'}}>
     <Feed.Event>
       <Feed.Label>
-        <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+        <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' alt="dog"/>
       </Feed.Label>
       <Feed.Content>
         <Feed.Summary>
@@ -112,15 +112,15 @@ export default class PlaceholderExampleCard extends Component {
       <Feed.Label image='https://react.semantic-ui.com/images/avatar/small/helen.jpg' />
       <Feed.Content>
         <Feed.Summary>
-          <a>Helen Troy</a> added <a>2 new illustrations</a>
+          <a href="/#">Helen Troy</a> added <a href="/#">2 new illustrations</a>
           <Feed.Date>4 days ago</Feed.Date>
         </Feed.Summary>
         <Feed.Extra images>
-          <a>
-            <img src='https://react.semantic-ui.com/images/wireframe/image.png' />
+          <a href="/#">
+            <img src='https://react.semantic-ui.com/images/wireframe/image.png'  alt="dod"/>
           </a>
-          <a>
-            <img src='https://react.semantic-ui.com/images/wireframe/image.png' />
+          <a href="/#">
+            <img src='https://react.semantic-ui.com/images/wireframe/image.png' alt="dod"/>
           </a>
         </Feed.Extra>
         <Feed.Meta>
@@ -151,7 +151,7 @@ export default class PlaceholderExampleCard extends Component {
       <Feed.Label image='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
       <Feed.Content>
         <Feed.Summary>
-          <a>Joe Henderson</a> posted on his page
+          <a href="/#">Joe Henderson</a> posted on his page
           <Feed.Date>3 days ago</Feed.Date>
         </Feed.Summary>
         <Feed.Extra text>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './login.css';
 import PlaceholderExampleCard from '../Login';
-import {Segment, Header, Popup, Icon,  Divider, Grid, Form, Button, Placeholder} from 'semantic-ui-react';
+import {Segment, Header,Icon,  Divider, Grid, Form, Button} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import LogedInPage from'../LoginScreens'
 import {setAuthSignIn, setAuthSignOut} from '../../Actions/index';
